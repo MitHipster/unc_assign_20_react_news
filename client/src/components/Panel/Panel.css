@@ -1,0 +1,5 @@
+/* Image panel */
+.panel-image {
+  overflow: hidden;
+  max-height: 400px;
+}

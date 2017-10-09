@@ -17,12 +17,6 @@ main {
   margin-bottom: 32px;
 }
 
-/* Image panel */
-.panel-image {
-  overflow: hidden;
-  max-height: 400px;
-}
-
 /* Articles */
 .collection .collection-item.avatar {
   padding: 20px;

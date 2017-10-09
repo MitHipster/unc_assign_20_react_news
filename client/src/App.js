@@ -4,11 +4,13 @@ import './App.css';
 import Main from './pages/Main';
 import Saved from './pages/Saved';
 import Nav from './components/Nav';
+import Panel from './components/Panel';
 
 const App = () =>
   <Router>
     <div>
       <Nav />
+      <Panel />
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/books" component={Main} />
