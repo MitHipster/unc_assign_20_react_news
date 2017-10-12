@@ -4,7 +4,6 @@ import './App.css';
 import Nav from './components/Nav';
 import Panel from './components/Panel';
 import Main from './pages/Main';
-import Saved from './pages/Saved';
 
 const App = () =>
   <Router>
@@ -14,7 +13,6 @@ const App = () =>
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/books" component={Main} />
-        <Route component={Saved} />
       </Switch>
     </div>
   </Router>;

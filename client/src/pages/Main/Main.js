@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Input, FormBtn } from "../../components/Form";
+import { Input, FormBtn } from '../../components/Form';
 import API from '../../utils/API';
 import { Link } from 'react-router-dom';
+import { List, ListItem } from '../../components/Collection';
+import moment from 'moment';
 
 class Main extends Component {
   state = {
@@ -32,7 +34,15 @@ class Main extends Component {
         startYear: this.state.startYear,
         endYear: this.state.endYear
       })
-        .then( res => console.log(res) )
+        .then( res => {
+          console.log(res.data.response.docs);
+          this.setState({
+            articles: res.data.response.docs,
+            searchTerm: '',
+            startYear: '',
+            endYear: ''
+          });
+        })
         .catch( err => console.log(err) );
     }
   };
@@ -40,10 +50,7 @@ class Main extends Component {
   render() {
     return (
       <div className="container containers">
-        <p>Search: {this.state.searchTerm}</p>
-        <p>Start: {this.state.startYear}</p>
-        <p>End: {this.state.endYear}</p>
-        <h4>Search Articles</h4>
+        <h4 id="search">Search for Articles</h4>
         <div className="row">
           <form id="search-form" className="col s12" action="" method="get">
             <div className="row">
@@ -94,6 +101,28 @@ class Main extends Component {
             />
           </form>
         </div>
+        {this.state.articles.length ? (
+          <div>
+            <h4 id="results">Your Search Results</h4>
+            <List>
+              {this.state.articles.map(article => (
+                // return (
+                <ListItem
+                  key={article._id}
+                  id={article._id}
+                  url={article.web_url}
+                  headline={article.headline.main}
+                  summary={article.snippet}
+                  byline={ (article.byline && article.byline.original) ? article.byline.original : "NOT AVAILABLE" }
+                  date={moment(article.pub_date).format('MMMM Do, YYYY')}
+                />
+                // );
+              ))}
+            </List>
+          </div>
+        ) : (
+          <h4 id="results">Search to display results here</h4>
+        )}
       </div>
     );
   }
