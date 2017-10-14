@@ -4,6 +4,6 @@ const controller = require('../../controllers/main');
 // Matches with '/api/saved'
 router.route('/')
   .get()
-  .post();
+  .post(controller.create);
 
 module.exports = router;

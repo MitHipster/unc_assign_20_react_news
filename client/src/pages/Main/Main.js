@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Input, FormBtn } from '../../components/Form';
 import API from '../../utils/API';
 import { Link } from 'react-router-dom';
-import { List, ListItem } from '../../components/Collection';
-import moment from 'moment';
+import { List, ListItem } from '../../components/List';
 
 class Main extends Component {
   state = {
@@ -17,6 +16,12 @@ class Main extends Component {
     // API.getArticles()
     //   .then( res => res )
     //   .catch( err => console.log(err) );
+  };
+
+  saveArticle = articleInfo => {
+    API.saveArticle(articleInfo)
+      .then(res => this.loadArticles())
+      .catch(err => console.log(err));
   };
 
   handleInputChange = event => {
@@ -106,17 +111,19 @@ class Main extends Component {
             <h4 id="results">Your Search Results</h4>
             <List>
               {this.state.articles.map(article => (
-                // return (
                 <ListItem
                   key={article._id}
-                  id={article._id}
+                  _id={article._id}
                   url={article.web_url}
                   headline={article.headline.main}
                   summary={article.snippet}
                   byline={ (article.byline && article.byline.original) ? article.byline.original : "NOT AVAILABLE" }
-                  date={moment(article.pub_date).format('MMMM Do, YYYY')}
+                  image="https://placehold.it//210x140"
+                  date={article.pub_date}
+                  saveArticle={this.saveArticle}
+                  title="Add article"
+                  icon="add"
                 />
-                // );
               ))}
             </List>
           </div>

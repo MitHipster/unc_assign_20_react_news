@@ -1,15 +1,17 @@
 import React from 'react';
+import { Button } from "./";
+import moment from 'moment';
 
 export const ListItem = props => (
   <li className="collection-item avatar">
-    <img className="responsive-img" src="https://placehold.it//210x140" alt="" />
+    <img className="responsive-img" src={props.image} alt="" />
     <div className="collection-text">
       <a href={props.url} target="_blank"><span className="title">{props.headline}</span></a>
       <p>{props.summary}<br />
       <span className="collection-byline">{props.byline}</span><br />
-      <span className="collection-date">{props.date}</span>
+      <span className="collection-date">{moment(props.date).format('MMMM Do, YYYY')}</span>
       </p>
     </div>
-    <a href={`/saved/${props.id}`} className="btn btn-floating waves-effect grey darken-1 secondary-content"><i className="material-icons" title="Add article">add</i></a>
+    <Button {...props} />
   </li>
 );

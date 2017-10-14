@@ -5,6 +5,10 @@ const Schema = mongoose.Schema;
 
 // Define article schema
 const ArticleSchema = new Schema({
+  _id: {
+    type: String,
+    required: true
+  },
   url: {
     type: String,
     unique: true,

@@ -6,8 +6,8 @@ export default {
     return axios.get('/api/saved');
   },
   // Save new article to database
-  saveArticle: () =>  {
-    return axios.post('/api/saved');
+  saveArticle: (articleInfo) =>  {
+    return axios.post('/api/saved', articleInfo);
   },
   // Delete an article with the given id
   deleteArticle: id =>  {
