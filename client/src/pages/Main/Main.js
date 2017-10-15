@@ -32,10 +32,10 @@ class Main extends Component {
       .catch(err => console.log(err));
   };
 
-  removeArticle = () => {
-    // API.removeArticle()
-    //   .then(res => this.loadArticles())
-    //   .catch(err => console.log(err));
+  removeArticle = id => {
+    API.removeArticle(id)
+      .then(res => this.loadArticles())
+      .catch(err => console.log(err));
   };
 
   handleInputChange = event => {
@@ -69,6 +69,7 @@ class Main extends Component {
   render() {
     return (
       <div className="container containers">
+        <hr />
         <h4 id="search">Search for Articles</h4>
         <div className="row">
           <Form>
@@ -122,6 +123,7 @@ class Main extends Component {
         </div>
         {this.state.articles.length ? (
           <div>
+            <hr />
             <h4 id="results">Your Search Results</h4>
             <List>
               {this.state.articles.map(article => (
@@ -134,7 +136,7 @@ class Main extends Component {
                   byline={ (article.byline && article.byline.original) ? article.byline.original : "NOT AVAILABLE" }
                   image="https://placehold.it//210x140"
                   date={article.pub_date}
-                  saveArticle={this.saveArticle}
+                  click={this.saveArticle}
                   title="Add article"
                   icon="add"
                 />
@@ -142,10 +144,14 @@ class Main extends Component {
             </List>
           </div>
         ) : (
-          <h5 id="results"><em>Search results will display here</em></h5>
+          <div>
+            <hr />
+            <h5 id="results"><em>Search results will display here</em></h5>
+          </div>
         )}
         {this.state.savedArticles.length ? (
           <div>
+            <hr />
             <h4 id="saved">Your Saved Articles</h4>
             <List>
               {this.state.savedArticles.map(savedArticle => (
@@ -158,7 +164,7 @@ class Main extends Component {
                   byline={savedArticle.byline}
                   image={savedArticle.image}
                   date={savedArticle.date}
-                  removeArticle={this.removeArticle}
+                  click={this.removeArticle}
                   title="Remove article"
                   icon="remove"
                 />
@@ -166,7 +172,10 @@ class Main extends Component {
             </List>
           </div>
         ) : (
-          <h5 id="saved"><em>Saved articles will display here</em></h5>
+          <div>
+            <hr />
+            <h5 id="saved"><em>There are no saved articles</em></h5>
+          </div>
         )}
       </div>
     );

@@ -15,4 +15,11 @@ module.exports = {
       .then(data => res.json(data))
       .catch(err => console.log(err));
   },
+  remove: function(req, res) {
+    db.Article
+      .findById({ _id: req.params.id })
+      .then(data => data.remove())
+      .then(data => res.json(data))
+      .catch(err => console.log(err));
+  }
 };

@@ -6,4 +6,9 @@ router.route('/')
   .get(controller.findAll)
   .post(controller.create);
 
+// Matches with "/api/saved/:id"
+router
+  .route("/:id")
+  .delete(controller.remove);
+
 module.exports = router;

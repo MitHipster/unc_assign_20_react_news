@@ -10,8 +10,8 @@ export default {
     return axios.post('/api/saved', articleInfo);
   },
   // Delete an article with the given id
-  removeArticle: id =>  {
-    return axios.delete('/api/saved/' + id);
+  removeArticle: articleInfo =>  {
+    return axios.delete('/api/saved/' + articleInfo._id);
   },
   // Send search parameters to fetch articles
   searchArticles: req => {
