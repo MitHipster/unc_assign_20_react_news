@@ -19,6 +19,15 @@ hr {
   margin-top: 36px;
 }
 
+/* Adjust link positions to account for fixed header */
+.offset:before {
+	display: block;
+ 	content: "";
+  height: 72px; /* Height of fixed navbar */
+  margin-top: -72px; /* Negative margin to offset height */
+  visibility: hidden;
+}
+
 @media only screen and (min-width: 720px) {
   /* Global styles */
   hr {

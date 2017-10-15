@@ -2,25 +2,25 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = () => (
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">News Monger</h5>
-          <p class="grey-text text-lighten-4">All the news that's fit to search.</p>
+  <footer className="page-footer">
+    <div className="container">
+      <div className="row">
+        <div className="col l6 s12">
+          <h5 className="white-text">News Monger</h5>
+          <p className="grey-text text-lighten-4">All the news that's fit to search.</p>
         </div>
-        <div class="col l2 offset-l4 s12">
-          <h5 class="white-text">Follow on</h5>
+        <div className="col l2 offset-l4 s12">
+          <h5 className="white-text">Follow on</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="">Facebook</a></li>
-            <li><a class="grey-text text-lighten-3" href="">Instagram</a></li>
-            <li><a class="grey-text text-lighten-3" href="">Twitter</a></li>
+            <li><a className="grey-text text-lighten-3" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a className="grey-text text-lighten-3" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a className="grey-text text-lighten-3" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
+    <div className="footer-copyright">
+      <div className="container">
       © 2017 Tim Acker
       </div>
     </div>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, FormBtn } from '../../components/Form';
 import API from '../../utils/API';
-import { Link } from 'react-router-dom';
 import { List, ListItem } from '../../components/List';
 
 class Main extends Component {
@@ -70,7 +69,7 @@ class Main extends Component {
     return (
       <div className="container">
         <hr />
-        <h4 id="search">Search for Articles</h4>
+        <h4 id="search" className="offset">Search for Articles</h4>
         <div className="row">
           <Form>
             <div className="row">
@@ -123,7 +122,7 @@ class Main extends Component {
         {this.state.articles.length ? (
           <div>
             <hr />
-            <h4 id="results">Your Search Results</h4>
+            <h4 id="results" className="offset">Your Search Results</h4>
             <List>
               {this.state.articles.map(article => (
                 <ListItem
@@ -145,13 +144,13 @@ class Main extends Component {
         ) : (
           <div>
             <hr />
-            <h5 id="results"><em>Search results will display here</em></h5>
+            <h5 id="results" className="offset"><em>Search results will display here</em></h5>
           </div>
         )}
         {this.state.savedArticles.length ? (
           <div>
             <hr />
-            <h4 id="saved">Your Saved Articles</h4>
+            <h4 id="saved" className="offset">Your Saved Articles</h4>
             <List>
               {this.state.savedArticles.map(savedArticle => (
                 <ListItem
@@ -173,7 +172,7 @@ class Main extends Component {
         ) : (
           <div>
             <hr />
-            <h5 id="saved"><em>There are no saved articles</em></h5>
+            <h5 id="saved" className="offset"><em>There are no saved articles</em></h5>
           </div>
         )}
       </div>
