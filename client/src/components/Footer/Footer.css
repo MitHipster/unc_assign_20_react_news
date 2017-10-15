@@ -1,0 +1,9 @@
+footer {
+  margin-top: 36px;
+}
+
+@media only screen and (min-width: 720px) {
+  footer {
+    margin-top: 72px;
+  }
+}
