@@ -40,12 +40,7 @@ const ArticleSchema = new Schema({
   savedDate: {
     type: Date,
     default: Date.now
-  },
-  // Link to Remark model
-  remarks: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Remark'
-  }]
+  }
 });
 
 // Create model with schema

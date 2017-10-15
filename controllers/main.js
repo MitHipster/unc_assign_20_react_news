@@ -1,22 +1,22 @@
-const db = require('../models');
+const Article = require('../models/article');
 
 // Defining methods for the main controller
 module.exports = {
   findAll: function(req, res) {
-    db.Article
+    Article
       .find(req.query)
       .sort({ savedDate: -1 })
       .then(data => res.json(data))
       .catch(err => console.log(err));
   },
   create: function(req, res) {
-    db.Article
+    Article
       .create(req.body)
       .then(data => res.json(data))
       .catch(err => console.log(err));
   },
   remove: function(req, res) {
-    db.Article
+    Article
       .findById({ _id: req.params.id })
       .then(data => data.remove())
       .then(data => res.json(data))
