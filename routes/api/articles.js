@@ -3,7 +3,7 @@ const controller = require('../../controllers/main');
 
 // Matches with '/api/saved'
 router.route('/')
-  .get()
+  .get(controller.findAll)
   .post(controller.create);
 
 module.exports = router;

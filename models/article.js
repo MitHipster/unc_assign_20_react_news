@@ -37,10 +37,9 @@ const ArticleSchema = new Schema({
     type: Date,
     required: true
   },
-  saved: {
-    type: Boolean,
-    required: true,
-    default: false
+  savedDate: {
+    type: Date,
+    default: Date.now
   },
   // Link to Remark model
   remarks: [{

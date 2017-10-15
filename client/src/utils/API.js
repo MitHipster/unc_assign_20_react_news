@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default {
   // Get all saved articles from database
-  savedArticles: () => {
+  getSavedArticles: () => {
     return axios.get('/api/saved');
   },
   // Save new article to database
@@ -10,7 +10,7 @@ export default {
     return axios.post('/api/saved', articleInfo);
   },
   // Delete an article with the given id
-  deleteArticle: id =>  {
+  removeArticle: id =>  {
     return axios.delete('/api/saved/' + id);
   },
   // Send search parameters to fetch articles
