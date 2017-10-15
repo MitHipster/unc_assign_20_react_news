@@ -6,12 +6,15 @@ $(document).ready(function () {
     closeOnClick: true
   });
 
-  // Initialize modal for adding remarks
-  // Modal can be dismissed by clicking outside of the modal
-  // $('.modal').modal({ dismissible: true });
-  // Set action attribute on form when add comment button is clicked
-  // $('.modal-trigger').click( (e) => {
-  //   let id = $(e.target).data('id');
-  //   $("#comment-form").attr('action', '/notes/' + id);
-  // });
+  // Set smooth scroll click event on valid links
+  // Select links with hashes
+  $('a[href*="#"]')
+  // Remove links that are just placeholders
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function () {
+    $('html, body').animate({
+      scrollTop: $( $(this).attr('href') ).offset().top
+    }, 800);
+  });
 });
