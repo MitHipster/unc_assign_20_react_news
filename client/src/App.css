@@ -11,16 +11,17 @@ main {
   flex: 1 0 auto;
 }
 
-/* Global styles */
-.containers {
-  margin-top: 32px;
-  margin-bottom: 32px;
+hr {
+  display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px solid #9e9e9e;
+    margin-top: 36px;
 }
 
 @media only screen and (min-width: 720px) {
   /* Global styles */
-  .containers {
-    margin-top: 64px;
-    margin-bottom: 64px;
+  hr {
+    margin-top: 72px;
   }
 }

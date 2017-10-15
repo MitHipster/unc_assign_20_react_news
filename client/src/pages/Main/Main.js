@@ -68,7 +68,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="container containers">
+      <div className="container">
         <hr />
         <h4 id="search">Search for Articles</h4>
         <div className="row">
@@ -114,7 +114,6 @@ class Main extends Component {
             <FormBtn
               id="searchBtn"
               type="submit"
-              className="btn waves-effect waves-light search-btn"
               onClick={this.handleFormSubmit}
               disabled={ !(this.state.searchTerm && this.state.startYear) }
               children="Search"

@@ -3,7 +3,7 @@ import "./List.css";
 
 export const List = ({ children }) => {
   return (
-    <div className="containers">
+    <div>
       <ul className="collection">
         {children}
       </ul>
